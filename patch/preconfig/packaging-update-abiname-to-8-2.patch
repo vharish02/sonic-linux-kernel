@@ -1,4 +1,4 @@
-Update debian abiname to 8-1
+Update debian abiname to 8-2
 
 From: Guohan Lu <gulv@microsoft.com>
 
@@ -14,7 +14,7 @@ index cfc4409..fae58f7 100644
 @@ -1,5 +1,5 @@
  [abi]
 -abiname: 8
-+abiname: 8-1
++abiname: 8-2
  ignore-changes:
   __cpuhp_*
   bpf_analyzer
