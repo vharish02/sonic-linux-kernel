@@ -2,7 +2,7 @@
 SHELL = /bin/bash
 .SHELLFLAGS += -e
 
-KERNEL_ABI_MINOR_VERSION = 1
+KERNEL_ABI_MINOR_VERSION = 2
 KVERSION_SHORT ?= 4.9.0-8-$(KERNEL_ABI_MINOR_VERSION)
 KVERSION ?= $(KVERSION_SHORT)-amd64
 KERNEL_VERSION ?= 4.9.110
@@ -62,8 +62,6 @@ $(addprefix $(DEST)/, $(MAIN_TARGET)): $(DEST)/% :
 	dpkg-source -x $(DSC_FILE)
 
 	pushd $(BUILD_DIR)
-	sed -i '/abiname:.*/ s/$$/-1/' debian/config/defines
-	fakeroot debian/rules debian/control-real || true
 	git init
 	git add -f *
 	git commit -qm "check in all loose files and diffs"
